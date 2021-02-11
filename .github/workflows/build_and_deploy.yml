@@ -33,5 +33,5 @@ jobs:
           username: ${{ secrets.REMOTE_USER }}
           password: ${{ secrets.REMOTE_PASSWORD }}
           local-dir: "./build/"
-          protocol: "ftps",
+          protocol: "ftps"
           security: "loose"
