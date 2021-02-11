@@ -1,5 +1,5 @@
 # Busters Homepage [WIP]
 
-![CD](https://github.com/majesnix/flat-buster.de/workflows/CD/badge.svg)
+![Build and Deploy Website](https://github.com/majesnix/flat-buster.de/workflows/Build%20and%20Deploy%20Website/badge.svg)
 
 This is a rewrite of the Homepage for my Dog Buster.
