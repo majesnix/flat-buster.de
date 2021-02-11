@@ -6,7 +6,6 @@ const blink = keyframes`
 `;
 
 const Dot = styled.span`
-  color: black;
   animation: 1s ${blink} infinite;
   &:nth-child(1) {
     animation-delay: 0ms;

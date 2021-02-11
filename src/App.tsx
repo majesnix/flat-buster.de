@@ -3,7 +3,6 @@ import Card from "./components/Card";
 import Container from "./components/Container";
 import Header from "./components/Header";
 import React from "react";
-
 import { HashRouter } from "react-router-dom";
 import Routes from "./Routes";
 import Footer from "./components/Footer";
