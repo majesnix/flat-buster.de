@@ -7,6 +7,7 @@ interface ICarouselProps {
   images: any[];
 }
 
+// source: https://maxmarinich.github.io/react-alice-carousel/#lazy-loading
 const LazyLoader = (props: any) => {
   let timerId: NodeJS.Timeout;
   const { src = "", delay = 0, onLoad } = props;
