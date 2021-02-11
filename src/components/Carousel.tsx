@@ -26,6 +26,7 @@ const LazyLoader = (props: any) => {
   useEffect(() => {
     if (!isMounted) {
       setMounted(true);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       delay ? (timerId = setTimeout(loadImage, delay)) : loadImage();
     }
     return () => clearTimeout(timerId);
