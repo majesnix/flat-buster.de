@@ -1,10 +1,5 @@
 name: Build and Deploy Website
 
-on:
-  push:
-    tags:
-      - "v*"
-
 jobs:
   build:
     runs-on: ubuntu-latest
