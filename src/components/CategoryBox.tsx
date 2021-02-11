@@ -9,6 +9,7 @@ interface ICategoryBoxProps {
   buttonText: string;
   containerCount: number;
   linkRoute: string;
+  key: string;
 }
 
 interface IContainerProps {
@@ -35,7 +36,7 @@ const SubText = styled.div`
 
 const CategoryBox = (props: ICategoryBoxProps) => {
   return (
-    <Container containerCount={props.containerCount}>
+    <Container containerCount={props.containerCount} key={props.key}>
       {props.icon}
       <Spacer height={32} />
       <Title>{props.title}</Title>

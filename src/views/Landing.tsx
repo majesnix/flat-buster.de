@@ -20,17 +20,16 @@ const CategoriesWrapper = styled.div`
 const categories = [
   {
     title: "Bilder",
-    buttonText: "Click",
+    buttonText: "Zu den Bildern",
     subText:
-      "Klick auf den unten angegebenen Link um euch Bilder von Buster anzuschauen.",
+      "Bilder von Buster und seinem Leben, Welpentreffen, Tierfreunde und noch mehr.",
     linkRoute: "/images",
     icon: <FontAwesomeIcon icon={faCamera} size="3x" color="grey" />,
   },
   {
     title: "Videos",
-    buttonText: "Click",
-    subText:
-      "Klick auf den unten angegebenen Link um euch Videos von Buster anzuschauen.",
+    buttonText: "Zu den Videos",
+    subText: "Einige Videos von Buster, als er ein Welpe war.",
     linkRoute: "/videos",
     icon: <FontAwesomeIcon icon={faVideo} size="3x" color="grey" />,
   },
@@ -46,7 +45,7 @@ const Landing = () => {
       </div>
       <Spacer height={24} />
       <CategoriesWrapper>
-        {categories.map((category) => (
+        {categories.map((category, index) => (
           <CategoryBox
             title={category.title}
             subText={category.subText}
@@ -54,6 +53,7 @@ const Landing = () => {
             containerCount={categories.length}
             icon={category.icon}
             linkRoute={category.linkRoute}
+            key={`${category.title}-${index}`}
           />
         ))}
       </CategoriesWrapper>

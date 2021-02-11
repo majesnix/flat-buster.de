@@ -11,7 +11,7 @@ const StyledLink = styled(Link)`
   background-color: ${(props) => props.color};
   border: none;
   color: white;
-  padding: 16px 32px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
