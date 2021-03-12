@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Spacer from "./Spacer";
-import { useMediaQuery } from "react-responsive";
 
 interface ICategoryBoxProps {
   title: string;
