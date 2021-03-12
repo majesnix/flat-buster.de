@@ -1,23 +1,28 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-const NavBar = styled.div`
+interface IHeaderProps {
+  isMobile: boolean;
+}
+
+const NavBar = styled.div<IHeaderProps>`
   position: absolute;
   top: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 64px;
-  width: calc(100% - 128px);
+  padding: 0 ${(props) => (props.isMobile ? "32" : "64")}px;
+  width: calc(100% - ${(props) => (props.isMobile ? "56" : "128")}px);
   color: #fbfbfb;
   position: fixed;
 `;
 
-const HeaderComp = styled.div`
+const HeaderComp = styled.div<IHeaderProps>`
   fontsize: 18px;
   fontfamily: 'Roboto", "Helvetica", "Arial", sans-serif';
   fontweight: 300;
   lineheight: 30px;
+  ${(props) => (props.isMobile ? "width: 130px" : "")};
 `;
 
 const Links = styled.div`
@@ -31,9 +36,11 @@ const Links = styled.div`
   }
 `;
 
-const Header = () => (
-  <NavBar>
-    <HeaderComp>{process.env.REACT_APP_NAME}</HeaderComp>
+const Header = (props: IHeaderProps) => (
+  <NavBar isMobile={props.isMobile}>
+    <HeaderComp isMobile={props.isMobile}>
+      {process.env.REACT_APP_NAME}
+    </HeaderComp>
     <Links>
       <Link to="/">Home</Link>
       <Link to="/images">Bilder</Link>

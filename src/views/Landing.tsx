@@ -3,6 +3,11 @@ import CategoryBox from "../components/CategoryBox";
 import Spacer from "../components/Spacer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCamera, faVideo } from "@fortawesome/free-solid-svg-icons";
+import { useMediaQuery } from "react-responsive";
+
+interface ICategoriesWrapperProps {
+  isMobile: boolean;
+}
 
 const Container = styled.div`
   display: flex;
@@ -10,11 +15,18 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const CategoriesWrapper = styled.div`
+const CategoriesWrapper = styled.div<ICategoriesWrapperProps>`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   margin: 16px;
+
+  ${(props) =>
+    props.isMobile
+      ? `
+    flex-direction: column;
+    width: 90%;`
+      : ""}
 `;
 
 const categories = [
@@ -36,6 +48,8 @@ const categories = [
 ];
 
 const Landing = () => {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
   return (
     <Container>
       <h1>Bilder & Videos</h1>
@@ -44,18 +58,24 @@ const Landing = () => {
         anschauen.
       </div>
       <Spacer height={24} />
-      <CategoriesWrapper>
-        {categories.map((category, index) => (
-          <CategoryBox
-            title={category.title}
-            subText={category.subText}
-            buttonText={category.buttonText}
-            containerCount={categories.length}
-            icon={category.icon}
-            linkRoute={category.linkRoute}
-            key={`${category.title}-${index}`}
-          />
-        ))}
+      <CategoriesWrapper isMobile={isTabletOrMobile}>
+        {categories.map((category, index) => {
+          return (
+            <>
+              <CategoryBox
+                title={category.title}
+                subText={category.subText}
+                buttonText={category.buttonText}
+                containerCount={categories.length}
+                icon={category.icon}
+                linkRoute={category.linkRoute}
+                key={`${category.title}-${index}`}
+                isMobile={isTabletOrMobile}
+              />
+              {isTabletOrMobile ? <Spacer height={16} /> : null}
+            </>
+          );
+        })}
       </CategoriesWrapper>
     </Container>
   );

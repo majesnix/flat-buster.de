@@ -6,13 +6,16 @@ import React from "react";
 import { HashRouter } from "react-router-dom";
 import Routes from "./Routes";
 import Footer from "./components/Footer";
+import { useMediaQuery } from "react-responsive";
 
 function App() {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
+
   return (
     <Container>
       <HashRouter>
         <Background />
-        <Header />
+        <Header isMobile={isTabletOrMobile} />
         <Card>
           <Routes />
         </Card>
