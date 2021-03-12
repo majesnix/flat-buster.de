@@ -37,7 +37,6 @@ jobs:
           AWS_REGION: ${{ secrets.AWS_REGION }}
           SOURCE_DIR: "build"
 
-      # Invalidate Cloudfront (this action)
       - name: Invalidate Cloudfront cache
         uses: chetan/invalidate-cloudfront-action@master
         env:
