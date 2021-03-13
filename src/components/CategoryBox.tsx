@@ -10,18 +10,18 @@ interface ICategoryBoxProps {
   containerCount: number;
   linkRoute: string;
   isMobile: boolean;
-  key: string;
+  ident: string;
 }
 
 interface IContainerProps {
-  isMobile: boolean;
-  containerCount: number;
+  $isMobile: boolean;
+  $containerCount: number;
   key: string;
 }
 
 const Container = styled(Link)<IContainerProps>`
   width: ${(props) =>
-    (props.containerCount && !props.isMobile) ? 100 / (props.containerCount + 1) : "100"}%;
+    (props.$containerCount && !props.$isMobile) ? 100 / (props.$containerCount + 1) : "100"}%;
   padding: 16px;
   display: flex;
   justify-content: center;
@@ -51,10 +51,10 @@ const SubText = styled.div`
 const CategoryBox = (props: ICategoryBoxProps) => {
   return (
     <Container
-      containerCount={props.containerCount}
-      key={props.key}
+      $containerCount={props.containerCount}
+      key={props.ident}
       to={props.linkRoute}
-      isMobile={props.isMobile}
+      $isMobile={props.isMobile}
     >
       {props.icon}
       <Spacer height={32} />

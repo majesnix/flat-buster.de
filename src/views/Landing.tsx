@@ -13,6 +13,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 `;
 
 const CategoriesWrapper = styled.div<ICategoriesWrapperProps>`
@@ -20,6 +21,7 @@ const CategoriesWrapper = styled.div<ICategoriesWrapperProps>`
   justify-content: space-evenly;
   align-items: center;
   margin: 16px;
+  position: relative;
 
   ${(props) =>
     props.isMobile
@@ -34,7 +36,7 @@ const categories = [
     title: "Bilder",
     buttonText: "Zu den Bildern",
     subText:
-      "Bilder von Buster und seinem Leben, Welpentreffen, Tierfreunde und noch mehr.",
+      "Bilder von Buster und seinem Leben, Welpentreffen, Tierfreunden und noch mehr.",
     linkRoute: "/images",
     icon: <FontAwesomeIcon icon={faCamera} size="3x" color="grey" />,
   },
@@ -69,10 +71,12 @@ const Landing = () => {
                 containerCount={categories.length}
                 icon={category.icon}
                 linkRoute={category.linkRoute}
-                key={`${category.title}-${index}`}
+                ident={`${category.title}-${index}`}
                 isMobile={isTabletOrMobile}
               />
-              {isTabletOrMobile ? <Spacer height={16} /> : null}
+              {isTabletOrMobile ? (
+                <Spacer height={16} key={`spacer-${index}`} />
+              ) : null}
             </>
           );
         })}

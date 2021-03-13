@@ -18,14 +18,7 @@ const Hero = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  background-image: url(${image});
-  background-color: rgba(0, 0, 0, 0.5);
-`;
-
-const GreyLayer = styled.div`
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image});
 `;
 
 const Mouse = styled.img`
@@ -37,7 +30,6 @@ const Mouse = styled.img`
 
 const Background = () => (
   <Hero>
-    <GreyLayer />
     <Title />
     <Mouse src={mouse} />
   </Hero>
