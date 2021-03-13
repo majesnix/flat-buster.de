@@ -4,6 +4,10 @@ import styled from "styled-components";
 import Title from "./Title";
 import mouse from "../assets/img/mouse.gif";
 
+interface IBackgroundProps {
+  isMobile: boolean;
+}
+
 const Hero = styled.div`
   height: 90vh;
   max-height: 1000px;
@@ -18,7 +22,8 @@ const Hero = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${image});
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(${image});
 `;
 
 const Mouse = styled.img`
@@ -28,10 +33,10 @@ const Mouse = styled.img`
   top: 90%;
 `;
 
-const Background = () => (
+const Background = (props: IBackgroundProps) => (
   <Hero>
     <Title />
-    <Mouse src={mouse} />
+    {!props.isMobile && <Mouse src={mouse} />}
   </Hero>
 );
 

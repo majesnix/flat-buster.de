@@ -16,7 +16,7 @@ const App = () => {
   return (
     <Container>
       <HashRouter>
-        <Background />
+        <Background isMobile={isTabletOrMobile} />
         <Header isMobile={isTabletOrMobile} setShown={setShown} shown={shown} />
         {isTabletOrMobile && (
           <WaffleMenu shown={shown} setShown={setShown}>
