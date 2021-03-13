@@ -2,14 +2,14 @@ import Background from "./components/Background";
 import Card from "./components/Card";
 import Container from "./components/Container";
 import Header from "./components/Header";
-import React, { useState } from "react";
+import { useState } from "react";
 import { HashRouter, Link } from "react-router-dom";
 import Routes from "./Routes";
 import Footer from "./components/Footer";
 import { useMediaQuery } from "react-responsive";
 import WaffleMenu from "./components/WaffleMenu";
 
-function App() {
+const App = () => {
   const [shown, setShown] = useState(false);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
@@ -35,6 +35,6 @@ function App() {
       <Footer />
     </Container>
   );
-}
+};
 
 export default App;
