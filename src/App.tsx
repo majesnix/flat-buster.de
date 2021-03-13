@@ -10,7 +10,7 @@ import { useMediaQuery } from "react-responsive";
 import WaffleMenu from "./components/WaffleMenu";
 
 function App() {
-  const [shown, setShown] = useState(true);
+  const [shown, setShown] = useState(false);
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
   return (
