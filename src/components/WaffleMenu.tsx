@@ -6,7 +6,7 @@ import Spacer from "./Spacer";
 interface IWaffleMenuProps {
   shown: boolean;
   setShown?: React.Dispatch<React.SetStateAction<boolean>>;
-  children: any;
+  children: React.ReactNode;
 }
 
 interface IWaffleMenuContainerProps {

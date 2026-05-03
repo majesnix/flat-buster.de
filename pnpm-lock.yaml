@@ -23,9 +23,6 @@ importers:
       react-alice-carousel:
         specifier: ^2.9.1
         version: 2.9.1(react@19.2.5)
-      react-click-away-listener:
-        specifier: ^2.4.1
-        version: 2.4.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5)
       react-dom:
         specifier: ^19.2.5
         version: 19.2.5(react@19.2.5)
@@ -883,13 +880,6 @@ packages:
     resolution: {integrity: sha512-/wQE4cqogKL/db+SoiiRmdj5j6C9I31pfzrmz8nuXmWmSl/UxxJz/O92W/ryxicTw1au+3mUW+drU3ZAhF3JPA==}
     peerDependencies:
       react: '>=15.4'
-
-  react-click-away-listener@2.4.1:
-    resolution: {integrity: sha512-tBquElBHme1xuE6VWTsBpdxu73QpLBshdpl0nCjYWDz7E5sokyy6yF0iSp/Y8ECLRtIy9TP8fDsEpZQEg0fZmw==}
-    engines: {node: '>=18'}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   react-dom@19.2.5:
     resolution: {integrity: sha512-J5bAZz+DXMMwW/wV3xzKke59Af6CHY7G4uYLN1OvBcKEsWOs4pQExj86BBKamxl/Ik5bx9whOrvBlSDfWzgSag==}
@@ -2053,11 +2043,6 @@ snapshots:
     dependencies:
       react: 19.2.5
       vanilla-swipe: 2.4.1
-
-  react-click-away-listener@2.4.1(react-dom@19.2.5(react@19.2.5))(react@19.2.5):
-    dependencies:
-      react: 19.2.5
-      react-dom: 19.2.5(react@19.2.5)
 
   react-dom@19.2.5(react@19.2.5):
     dependencies:

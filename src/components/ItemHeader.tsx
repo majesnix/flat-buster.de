@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const Header = styled.div`
@@ -6,6 +7,6 @@ const Header = styled.div`
   align-items: center;
 `;
 
-const ItemHeader = (props: any) => <Header>{props.children}</Header>;
+const ItemHeader = ({ children }: { children: React.ReactNode }) => <Header>{children}</Header>;
 
 export default ItemHeader;

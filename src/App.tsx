@@ -21,9 +21,9 @@ const App = () => {
         {isTabletOrMobile && (
           <WaffleMenu shown={shown} setShown={setShown}>
             <>
-              <Link to="/">Home</Link>
-              <Link to="/images">Bilder</Link>
-              <Link to="/videos">Videos</Link>
+              <Link to="/" onClick={() => setShown(false)}>Home</Link>
+              <Link to="/images" onClick={() => setShown(false)}>Bilder</Link>
+              <Link to="/videos" onClick={() => setShown(false)}>Videos</Link>
             </>
           </WaffleMenu>
         )}
