@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 import CategoryBox from "../components/CategoryBox";
 import Spacer from "../components/Spacer";
@@ -6,7 +7,7 @@ import { faCamera, faVideo } from "@fortawesome/free-solid-svg-icons";
 import { useMediaQuery } from "react-responsive";
 
 interface ICategoriesWrapperProps {
-  isMobile: boolean;
+  $isMobile: boolean;
 }
 
 const Container = styled.div`
@@ -24,7 +25,7 @@ const CategoriesWrapper = styled.div<ICategoriesWrapperProps>`
   position: relative;
 
   ${(props) =>
-    props.isMobile
+    props.$isMobile
       ? `
     flex-direction: column;
     width: 90%;`
@@ -60,26 +61,22 @@ const Landing = () => {
         anschauen.
       </div>
       <Spacer height={24} />
-      <CategoriesWrapper isMobile={isTabletOrMobile}>
-        {categories.map((category, index) => {
-          return (
-            <>
-              <CategoryBox
-                title={category.title}
-                subText={category.subText}
-                buttonText={category.buttonText}
-                containerCount={categories.length}
-                icon={category.icon}
-                linkRoute={category.linkRoute}
-                ident={`${category.title}-${index}`}
-                isMobile={isTabletOrMobile}
-              />
-              {isTabletOrMobile ? (
-                <Spacer height={16} key={`spacer-${index}`} />
-              ) : null}
-            </>
-          );
-        })}
+      <CategoriesWrapper $isMobile={isTabletOrMobile}>
+        {categories.map((category, index) => (
+          <React.Fragment key={`${category.title}-${index}`}>
+            <CategoryBox
+              title={category.title}
+              subText={category.subText}
+              buttonText={category.buttonText}
+              containerCount={categories.length}
+              icon={category.icon}
+              linkRoute={category.linkRoute}
+              ident={`${category.title}-${index}`}
+              isMobile={isTabletOrMobile}
+            />
+            {isTabletOrMobile && <Spacer height={16} />}
+          </React.Fragment>
+        ))}
       </CategoriesWrapper>
     </Container>
   );

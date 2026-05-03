@@ -9,7 +9,11 @@ interface IWaffleMenuProps {
   children: any;
 }
 
-const WaffleMenuContainer = styled.div<IWaffleMenuProps>`
+interface IWaffleMenuContainerProps {
+  $shown: boolean;
+}
+
+const WaffleMenuContainer = styled.div<IWaffleMenuContainerProps>`
   width: 190px;
   height: 100vh;
   position: fixed;
@@ -21,11 +25,9 @@ const WaffleMenuContainer = styled.div<IWaffleMenuProps>`
   z-index: 10;
   box-shadow: 0px 5px 14px #0000002e;
 
-  transform: ${(props: IWaffleMenuProps) =>
-    props.shown ? "translateX(0%)" : "translateX(100%)"};
-  transition: ${(props: IWaffleMenuProps) => (props.shown ? "0.35s" : "0.3s")};
-  transition-timing-function: ${(props: IWaffleMenuProps) =>
-    props.shown ? "ease-out" : "ease-in"};
+  transform: ${(props) => (props.$shown ? "translateX(0%)" : "translateX(100%)")};
+  transition: ${(props) => (props.$shown ? "0.35s" : "0.3s")};
+  transition-timing-function: ${(props) => (props.$shown ? "ease-out" : "ease-in")};
 `;
 
 const LinkContainer = styled.div`
@@ -49,7 +51,7 @@ const WaffleMenu = (props: IWaffleMenuProps) => {
         props.setShown!(false);
       }}
     >
-      <WaffleMenuContainer shown={props.shown}>
+      <WaffleMenuContainer $shown={props.shown}>
         <Spacer height={32} />
         <LinkContainer>{props.children}</LinkContainer>
       </WaffleMenuContainer>

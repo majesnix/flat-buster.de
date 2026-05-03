@@ -7,38 +7,28 @@ import welpentreffenImages from "../assets/img/welpentreffen";
 import Spacer from "../components/Spacer";
 import ItemHeader from "../components/ItemHeader";
 
-const buildImageArray = (images: any) => {
-  const arr = [];
-
-  for (const image of images) {
-    arr.push(image);
-  }
-
-  return arr;
-};
-
 const Pictures = () => {
   return (
     <>
       <ItemHeader>Buster Aktuell</ItemHeader>
       <Spacer height={8} />
-      <Carousel images={buildImageArray(aktuellImages)} />
+      <Carousel images={aktuellImages} />
       <Spacer height={8} />
       <ItemHeader>Buster Allgemein</ItemHeader>
       <Spacer height={8} />
-      <Carousel images={buildImageArray(allgemeinImages)} />
+      <Carousel images={allgemeinImages} />
       <Spacer height={8} />
       <ItemHeader>Buster Klein</ItemHeader>
       <Spacer height={8} />
-      <Carousel images={buildImageArray(busterKleinImages)} />
+      <Carousel images={busterKleinImages} />
       <Spacer height={8} />
       <ItemHeader>Buster's Tierfreunde</ItemHeader>
       <Spacer height={8} />
-      <Carousel images={buildImageArray(tierfreundeImages)} />
+      <Carousel images={tierfreundeImages} />
       <Spacer height={8} />
       <ItemHeader>Welpentreffen</ItemHeader>
       <Spacer height={8} />
-      <Carousel images={buildImageArray(welpentreffenImages)} />
+      <Carousel images={welpentreffenImages} />
     </>
   );
 };

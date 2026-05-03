@@ -1,3 +1,4 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import Spacer from "./Spacer";
@@ -5,7 +6,7 @@ import Spacer from "./Spacer";
 interface ICategoryBoxProps {
   title: string;
   subText: string;
-  icon: JSX.Element;
+  icon: React.ReactNode;
   buttonText: string;
   containerCount: number;
   linkRoute: string;

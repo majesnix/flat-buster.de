@@ -10,7 +10,7 @@ interface IHeaderProps {
 }
 
 interface INavBarProps {
-  isMobile: boolean;
+  $isMobile: boolean;
 }
 
 const NavBar = styled.div<INavBarProps>`
@@ -18,18 +18,18 @@ const NavBar = styled.div<INavBarProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 ${(props) => (props.isMobile ? "32" : "64")}px;
-  width: calc(100% - ${(props) => (props.isMobile ? "56" : "128")}px);
+  padding: 0 ${(props) => (props.$isMobile ? "32" : "64")}px;
+  width: calc(100% - ${(props) => (props.$isMobile ? "56" : "128")}px);
   color: #fbfbfb;
   position: fixed;
 `;
 
 const HeaderComp = styled.div<INavBarProps>`
-  fontsize: 18px;
-  fontfamily: 'Roboto", "Helvetica", "Arial", sans-serif';
-  fontweight: 300;
-  lineheight: 30px;
-  ${(props) => (props.isMobile ? "width: 130px" : "")};
+  font-size: 18px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 300;
+  line-height: 30px;
+  ${(props) => (props.$isMobile ? "width: 130px" : "")};
 `;
 
 const Links = styled.div`
@@ -45,14 +45,13 @@ const Links = styled.div`
 
 const Header = (props: IHeaderProps) => {
   const showMenu = () => {
-    console.log("Show? ", !props.shown);
     props.setShown(!props.shown);
   };
 
   return (
-    <NavBar isMobile={props.isMobile}>
-      <HeaderComp isMobile={props.isMobile}>
-        {process.env.REACT_APP_NAME}
+    <NavBar $isMobile={props.isMobile}>
+      <HeaderComp $isMobile={props.isMobile}>
+        {import.meta.env.VITE_APP_NAME}
       </HeaderComp>
       {props.isMobile ? (
         <div>

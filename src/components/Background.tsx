@@ -1,8 +1,8 @@
-// @ts-ignore
-import image from "../assets/img/landing-bg.jpg";
 import styled from "styled-components";
 import Title from "./Title";
-import mouse from "../assets/img/mouse.gif";
+
+const image = "/img/landing-bg.jpg";
+const mouse = "/img/mouse.gif";
 
 interface IBackgroundProps {
   isMobile: boolean;

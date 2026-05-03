@@ -4,7 +4,7 @@ import "react-alice-carousel/lib/alice-carousel.css";
 import Dot from "./Dot";
 
 interface ICarouselProps {
-  images: any[];
+  images: string[];
 }
 
 // source: https://maxmarinich.github.io/react-alice-carousel/#lazy-loading

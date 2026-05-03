@@ -1,16 +1,15 @@
-import React from "react";
-import { Redirect, Route, Switch } from "react-router";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Landing from "./views/Landing";
 import Pictures from "./views/Pictures";
 import Videos from "./views/Videos";
 
-const Routes = () => (
-  <Switch>
-    <Route exact path="/" component={Landing} />
-    <Route exact path="/images" component={Pictures} />
-    <Route exact path="/videos" component={Videos} />
-    <Redirect from="*" to="/" />
-  </Switch>
+const AppRoutes = () => (
+  <Routes>
+    <Route path="/" element={<Landing />} />
+    <Route path="/images" element={<Pictures />} />
+    <Route path="/videos" element={<Videos />} />
+    <Route path="*" element={<Navigate to="/" replace />} />
+  </Routes>
 );
 
-export default Routes;
+export default AppRoutes;
